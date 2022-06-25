@@ -1,4 +1,9 @@
-// TODO: Include packages needed for this application
+// Variable and Dependents
+const fs = require("fs");
+const inquirer =require("inquirer");
+const generateReadme = require('./generateMarkdown')
+const writefileAsync = promisify(fs.writeFile);
+
 
 // TODO: Create an array of questions for user input
 const questions = [];
