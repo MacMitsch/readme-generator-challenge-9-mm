@@ -8,7 +8,7 @@ console.log('Answering these questions will generate a README.md file.')
 
 // questions - what bear is best?
 const questions = [
-        
+            // Title
        {
             type: "input",
             name: "title",
@@ -22,7 +22,7 @@ const questions = [
                 }
             }
         },
-        
+             // Description
         {
             type: "input",
             name: "description",
@@ -31,12 +31,13 @@ const questions = [
                 if (your_Input){
                     return true;
                 } else {
-                    console.log('Please enter a title!');
+                    console.log('Please enter a Description!');
                     return false
                 }
             }
         
         },
+             // Usage
         {
             type: "input",
             name: "usage",
@@ -45,25 +46,110 @@ const questions = [
                 if (your_Input){
                     return true;
                 } else {
-                    console.log('Please enter a title!');
+                    console.log('Please enter intended use of the project!');
                     return false
                 }
             } 
         },
+             // Installation
         {
             type: "input",
-            name: "installing",
+            name: "installation",
             message: "What is the Installation process?", 
             validate: your_Input => {
                 if (your_Input){
                     return true;
                 } else {
-                    console.log('Please enter a title!');
+                    console.log('Please enter installation instructions, If none enter "none"!');
                     return false
                 }
             } 
         },
-    
+             // License
+        {
+            type: "checkbox",
+            name: "license",
+            message: "Choose a license for your project?", 
+            choices:['MIT','Apache','GPL','BSD','GNU','No License','Other'],
+            validate: your_Input=> {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('Please select a license!');
+                    return false
+                }
+            } 
+        },
+            // Contributions
+        {
+            type: "input",
+            name: "contributing",
+            message: "How can someone contribute to the Project?", 
+            validate: your_Input => {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('Please enter a Response!');
+                    return false
+                }
+            } 
+        },
+             // Test
+        {
+            type: "input",
+            name: "test",
+            message: "How does someone test the project?", 
+            validate: your_Input => {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('Please enter a Response!');
+                    return false
+                }
+            } 
+        },   
+            //  Questions
+        {
+            type: "input",
+            name: "Questions",
+            message: "Please enter any additional questions or information", 
+            validate: your_Input => {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('Please enter a Response!');
+                    return false
+                }
+            } 
+        },   
+             // Github Username
+        {
+            type: "input",
+            name: "github",
+            message: "What is your Github Username?", 
+            validate: your_Input => {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('A Github name is required!');
+                    return false
+                }
+            } 
+        }, 
+             // Email Address
+        {
+            type: "input",
+            name: "email",
+            message: "Please enter an email for any questions about the Generator", 
+            validate: your_Input => {
+                if (your_Input){
+                    return true;
+                } else {
+                    console.log('Please enter a Response!');
+                    return false
+                }
+            } 
+        },     
 ];
 
 function writeFile (fileName, Data) {
@@ -77,9 +163,9 @@ function writeFile (fileName, Data) {
 // Function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(function(answers) {
-        console.log(answers)
-        writeFile("README.md", generateMarkdown(answers));
+    .then(function(userInput) {
+        console.log(userInput)
+        writeFile("README.md", generateMarkdown(userInput));
     });
 };
 
