@@ -71,7 +71,7 @@ const questions = [
             name: "license",
             message: "Choose a license for your project?", 
             choices:['MIT','Apache','GPL','BSD','GNU','No License','Other'],
-            validate: your_Input=> {
+            validate: your_Input => {
                 if (your_Input){
                     return true;
                 } else {
@@ -83,7 +83,7 @@ const questions = [
             // Contributions
         {
             type: "input",
-            name: "contributing",
+            name: "contribution",
             message: "How can someone contribute to the Project?", 
             validate: your_Input => {
                 if (your_Input){
@@ -108,10 +108,10 @@ const questions = [
                 }
             } 
         },   
-            //  Questions
+            //  additional comments or questions
         {
             type: "input",
-            name: "Questions",
+            name: "additional",
             message: "Please enter any additional questions or information", 
             validate: your_Input => {
                 if (your_Input){
@@ -140,7 +140,7 @@ const questions = [
         {
             type: "input",
             name: "email",
-            message: "Please enter an email for any questions about the Generator", 
+            message: "Please enter an email", 
             validate: your_Input => {
                 if (your_Input){
                     return true;
