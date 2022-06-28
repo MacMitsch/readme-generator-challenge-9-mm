@@ -6,7 +6,7 @@ const generateMarkdown = require('../util/generateMarkdown')
 console.log('Welcome to my README.md generator')
 console.log('Answering these questions will generate a README.md file.')
 
-// questions - what bear is best?
+        // question - what bear is best?
 const questions = [
             // Title
        {
